@@ -44,7 +44,7 @@ $y=$i+1;
 
 
 until ($y>$size-1) {
-$vhozdenieee = substr $file_to_dir[$y], 2, 6; 
+$vhozdenieee = substr $file_to_dir[$y], 2, 6;
 #print "Значение второе $vhozdenieee для сравнения";
 #push @pari, $vhozdenie;  #создание массива по шаблонам даты файла  для поиска пары
 #print "Вхождение $vhozdenie    второе вхождение    $vhozdenieee\n";
@@ -72,10 +72,10 @@ chdir ("$local_dir/tmp"); #изменение на рабочую директо
 #извлекаем дату проводки из транспортного файла и присваиваем ему имя по дате проводки из него же
 $dly_zamena=@dly_zameni[0];
 my $table = new XBase "$dly_zamena" or die XBase->errstr;
-         for (0 .. $table->last_record) 
+         for (0 .. $table->last_record)
 {
                my ($n_ree, $dt_bank, $plp, $sum_plp, $sum_psb, $sum_kw) = $table->get_record($_, "DT_BANK");
-#               print "$dt_bank:\t$msg\n" unless $n_ree; 
+#               print "$dt_bank:\t$msg\n" unless $n_ree;
 $data_provodki=$dt_bank; };
 #print "Дата проводки платежа  $data_provodki   \n";
 $new_data_provodki = substr $data_provodki, 2, 6;
@@ -119,9 +119,9 @@ else { print " нет файлов для отправки  \n" }
 
 sub otpravka55 {
 
-$SERVER='smtp.gmail.com:587'; # адрес почтового сервера с портом 
+$SERVER='smtp.gmail.com:587'; # адрес почтового сервера с портом
 $FROM1='xxxxxx@mail.ru'; # почтовый ящик от имени которого письмо
-$TO='oleg.borodin@banbankcards.ru';# ящик на который откравляем
+$TO='xxxxxx@xxxxx.ru';# ящик на который откравляем
 
 $TXT="Выгрузка реестров платежей  за $vhozdenie  ";
 $filess="MK$vhozdenie.zip";  # переменная для передачи имени файла в сообщение
